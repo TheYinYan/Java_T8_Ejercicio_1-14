@@ -71,19 +71,27 @@ public class Mates {
     /**
      * Le quita a un número n dígitos por detrás (por la derecha).
      * 
-     * @param num Numero
+     * @param num     Numero
      * @param digitos a quitar
      * @return Numeros con los digitos quitados
      */
     public static int quitaPorDetras(int num, int digitos) {
-        int aux = 0;
-        int voteado = voltear(num);
-        for (int i = 0; i < digitos(num) - digitos; i++) {
-            int digito = voteado % 10;
-            aux = aux * 10 + digito;
-            voteado /= 10;
+        for (int i = 0; i < digitos; i++) {
+            num /= 10;
         }
-        return aux;
+        return num;
+    }
+
+    /**
+     * Le quita a un número n dígitos por delante (por la izquierda).
+     * 
+     * @param num Numero
+     * @param digito a quitar
+     * @return Numeros con los digitos quitados
+     */
+    public static int quitaPorDelante(int num, int digito) {
+        int digitoTotal = digitos(num);
+        return num % (int) Math.pow(10, digitoTotal - digito);
     }
 
     /**

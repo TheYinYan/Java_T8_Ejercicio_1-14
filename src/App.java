@@ -28,7 +28,7 @@ public class App {
 
             if (opcion > 0 && opcion < 14)
                 num = Integer.parseInt(System.console().readLine("Introduzca numero "));
-            if (opcion == 6 || opcion == 7 || opcion == 8 || opcion == 9)
+            if (opcion == 6 || opcion == 7 || opcion == 8 || opcion == 9 || opcion == 10)
                 num2 = Integer.parseInt(System.console().readLine("Introduzca otro numero "));
 
             switch (opcion) {
@@ -77,6 +77,8 @@ public class App {
                     break;
 
                 case 10:
+                    System.out.printf("Si el %d, se le quita por delante %d dígito , se queda como %d%n", num, num2,
+                            Mates.quitaPorDelante(num, num2));
                     break;
 
                 case 11:
