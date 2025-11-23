@@ -148,9 +148,12 @@ public class Mates {
      */
     public static int potencia(int base, int exponente) {
         int num = base;
-        for (int i = 1; i <= exponente; i++) {
-            if (i == 1) num = base;
-            else num = num * base;
+        if (exponente == 0) num = 1;
+        else {
+            for (int i = 1; i <= exponente; i++) {
+                if (i == 1) num = base;
+                else num = num * base;
+            }
         }
         return num;
     }
