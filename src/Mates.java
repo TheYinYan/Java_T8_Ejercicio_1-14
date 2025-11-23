@@ -181,12 +181,10 @@ public class Mates {
      */
     public static int voltear(int num) {
         int voltear = 0;
-        int digitos = digitos(num);
-        while (digitos > 0) {
+        while (num > 0) {
             int digito = num % 10;
             voltear = voltear * 10 + digito;
             num /= 10;
-            digitos--;
         }
         return voltear;
     }
