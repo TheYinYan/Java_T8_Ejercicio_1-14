@@ -17,19 +17,22 @@ public class App {
                     8.  posicionDeDigito
                     9.  quitaPorDetras
                     10. quitaPorDelante
-                    11.
-                    12.
-                    13.
-                    14.
+                    11. pegaPorDetras
+                    12. pegaPorDelante
+                    13. trozoDeNumero
+                    14. juntaNumeros
                     """);
             int opcion = Integer.parseInt(System.console().readLine("Opción "));
             int num = 0;
             int num2 = 0;
+            int num3 = 0;
 
-            if (opcion > 0 && opcion < 14)
-                num = Integer.parseInt(System.console().readLine("Introduzca numero "));
-            if (opcion == 6 || opcion == 7 || opcion == 8 || opcion == 9 || opcion == 10)
+            if (opcion > 0 && opcion <= 14) num = Integer.parseInt(System.console().readLine("Introduzca numero "));
+
+            if (opcion == 6 || opcion == 7 || opcion == 8 || opcion == 9 || opcion == 10 || opcion == 11 || opcion == 12 || opcion == 13 || opcion == 14)
                 num2 = Integer.parseInt(System.console().readLine("Introduzca otro numero "));
+
+            if (opcion == 13) num3 = Integer.parseInt(System.console().readLine("Introduzca otro numero más "));
 
             switch (opcion) {
                 case 0:
@@ -82,15 +85,22 @@ public class App {
                     break;
 
                 case 11:
+                    System.out.printf("Si al %d le pegas por detras el %d da el %d%n", num, num2,
+                            Mates.pegaPorDetras(num, num2));
                     break;
 
                 case 12:
+                    System.out.printf("Si al %d le pegas por delante el %d da el %d%n", num, num2,
+                            Mates.pegaPorDelante(num, num2));
                     break;
 
                 case 13:
+                    System.out.printf("Al %d le cojo el trozo que va de la posición %d a la %d : %d%n", num, num2,num3,
+                            Mates.trozoDeNumero(num, num2,num3));
                     break;
 
                 case 14:
+                    System.out.printf("Juntando el %d y el %d da el %d",num,num2,Mates.juntaNumeros(num, num2));
                     break;
 
                 default:
