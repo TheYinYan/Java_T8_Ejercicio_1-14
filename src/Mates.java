@@ -7,8 +7,8 @@ public class Mates {
     /**
      * Dada una base y un exponente devuelve la potencia.
      * 
-     * @param base      Base de la potencia
-     * @param exponente Exponente de la potencia
+     * @param base      de la potencia
+     * @param exponente de la potencia
      * @return Potencia
      */
     public static int potencia(int base, int exponente) {
@@ -73,7 +73,7 @@ public class Mates {
      * 
      * @param num Numero
      * @param digitos a quitar
-     * @return numeros con los digitos quitados
+     * @return Numeros con los digitos quitados
      */
     public static int quitaPorDetras(int num, int digitos) {
         int aux = 0;
@@ -118,7 +118,7 @@ public class Mates {
      * 
      * @param num      Numero
      * @param posicion del numero
-     * @return Digito en la posicion del numero
+     * @return Digito en la posición del numero
      */
     public static int digitoN(int num, int posicion) {
         int digito = 0;
@@ -153,7 +153,7 @@ public class Mates {
      * Cuenta el número de dígitos de un número entero.
      * 
      * @param num Numero
-     * @return Numero de digitos
+     * @return Cantidad de digitos
      */
     public static int digitos(int num) {
         num = num * 10 + 1;
