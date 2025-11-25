@@ -13,7 +13,8 @@ public class Mates {
      */
     public static boolean esCapicua(int num) {
         boolean capicua = false;
-        if (num == voltear(num)) capicua = true;
+        if (num == voltear(num))
+            capicua = true;
         return capicua;
     }
 
@@ -25,7 +26,7 @@ public class Mates {
      */
     public static int siguientePrimo(int num) {
         int nextPrimo = num + 1;
-        while (esPrimo(nextPrimo) == false) 
+        while (esPrimo(nextPrimo) == false)
             nextPrimo++;
         return nextPrimo;
     }
@@ -39,9 +40,11 @@ public class Mates {
      */
     public static boolean esPrimo(int num) {
         boolean primo = true;
-        if (num == 1) primo = false;
-        for (int i = 2; i < num; i++) 
-            if ((double) (num % i) == 0) primo = false;
+        if (num == 1)
+            primo = false;
+        for (int i = 2; i < num; i++)
+            if ((double) (num % i) == 0)
+                primo = false;
         return primo;
     }
 
@@ -60,12 +63,15 @@ public class Mates {
         boolean correcto = false;
         while (voteado > 0 && !correcto) {
             int digitos = voteado % 10;
-            
-            if (digitos == digito) correcto = true;
-            else posicion++;
+
+            if (digitos == digito)
+                correcto = true;
+            else
+                posicion++;
             voteado /= 10;
         }
-        if (!correcto)  posicion = -1;
+        if (!correcto)
+            posicion = -1;
         return posicion;
     }
 
@@ -79,9 +85,7 @@ public class Mates {
      * @return Trozo del numero
      */
     public static int trozoDeNumero(int num, int inicial, int fin) {
-        num = quitaPorDelante(num, inicial);
-        num = quitaPorDetras(num, fin);
-        return num;
+        return quitaPorDelante(quitaPorDetras(num,digitos(num)-fin), inicial);
     }
 
     /**
@@ -102,8 +106,8 @@ public class Mates {
      * @param digitos a quitar
      * @return Numeros con los digitos quitados
      */
-    public static int quitaPorDetras(int num, int digitos) {  
-        return num / (int) potencia(10, digitos(num));
+    public static int quitaPorDetras(int num, int digitos) {
+        return num / (int) potencia(10, digitos);
     }
 
     /**
@@ -148,11 +152,14 @@ public class Mates {
      */
     public static int potencia(int base, int exponente) {
         int num = base;
-        if (exponente == 0) num = 1;
+        if (exponente == 0)
+            num = 1;
         else {
             for (int i = 1; i <= exponente; i++) {
-                if (i == 1) num = base;
-                else num = num * base;
+                if (i == 1)
+                    num = base;
+                else
+                    num = num * base;
             }
         }
         return num;
@@ -170,7 +177,8 @@ public class Mates {
         int digito = 0;
         int voteado = voltear(num);
         for (int i = 0; i < digitos(num); i++) {
-            if (i == posicion) digito = voteado % 10;
+            if (i == posicion)
+                digito = voteado % 10;
             voteado /= 10;
         }
         return digito;
