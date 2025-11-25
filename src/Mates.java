@@ -85,7 +85,7 @@ public class Mates {
      * @return Trozo del numero
      */
     public static int trozoDeNumero(int num, int inicial, int fin) {
-        return quitaPorDelante(quitaPorDetras(num,digitos(num)-fin), inicial);
+        return quitaPorDelante(quitaPorDetras(num, digitos(num) - fin), inicial);
     }
 
     /**
@@ -207,13 +207,11 @@ public class Mates {
      * @return Cantidad de digitos
      */
     public static int digitos(int num) {
-        num = num * 10 + 1;
         int digitos = 0;
-        while (num > 0) {
+        do {
             digitos++;
             num /= 10;
-        }
-        digitos--;
+        } while (num > 0);
         return digitos;
     }
 }
